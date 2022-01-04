@@ -25,19 +25,25 @@ Root
 
 ## Commands
 
-### 1. Start an Airnode local client
+### Generate a mnemonic phrase
+
+```sh
+yarn generate-seed-phrase
+```
+
+### Start an Airnode local client
 
 ```sh
 yarn start-airnode
 ```
 
-### 2. Stop your Airnode local client
+### Stop your Airnode local client
 
 ```sh
 yarn stop-airnode
 ```
 
-### 3. Deploy Airnode to AWS
+### Deploy Airnode to AWS
 
 ```sh
 yarn deploy-airnode

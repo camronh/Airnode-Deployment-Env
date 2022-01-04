@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "download-airnode": "docker pull api3/airnode-client:0.3.1",
+    "download-airnode": "docker pull api3/airnode-client:0.3.1 && docker pull api3/airnode-admin:0.3.1",
+    "generate-seed-phrase": "docker run api3/airnode-admin:0.3.1 generate-mnemonic",
     "stop-airnode": "docker stop quick-deploy-container-airnode && docker rm quick-deploy-container-airnode",
     "start-airnode": "docker run --detach --volume $(pwd)/config:/app/config --name quick-deploy-container-airnode api3/airnode-client:0.3.1 && docker logs --follow quick-deploy-container-airnode",
     "deploy-airnode": "docker run -it --rm --env-file aws.env -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v \"$(pwd)/config:/app/config\" -v \"$(pwd)/output:/app/output\" api3/airnode-deployer:0.3.1 deploy"
