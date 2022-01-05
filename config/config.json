@@ -1,1 +1,105 @@
-{}
+{
+  "chains": [
+    {
+      "authorizers": [],
+      "contracts": {
+        "AirnodeRrp": "0xC11593B87f258672b8eB02d9A723a429b15E9E03"
+      },
+      "id": "4",
+      "providers": {
+        "Rinkeby": {
+          "url": "${PROVIDER_URL}"
+        }
+      },
+      "type": "evm"
+    }
+  ],
+  "nodeSettings": {
+    "cloudProvider": {
+      "type": "local"
+    },
+    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
+    "logFormat": "plain",
+    "logLevel": "INFO",
+    "nodeVersion": "0.3.1",
+    "stage": "Staging",
+    "heartbeat": {
+      "enabled": false
+    },
+    "httpGateway": {
+      "enabled": true,
+      "apiKey": "${HTTP_GATEWAY_API_KEY}"
+    }
+  },
+  "triggers": {
+    "rrp": [
+      {
+        "endpointId": "0xd3e4bdc2aedbdd3a24942b92486d51fdab98a2e1f3bdc5a3297be8752d5654e0",
+        "endpointName": "POST /sendStatement",
+        "oisTitle": "CovidBetsAPI"
+      }
+    ]
+  },
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "CovidBetsAPI",
+      "version": "0.3.1",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "https://tp0oxzw0fd.execute-api.us-east-1.amazonaws.com/latest"
+          }
+        ],
+        "security": {},
+        "components": {
+          "securitySchemes": {}
+        },
+        "paths": {
+          "/sendStatement": {
+            "post": {
+              "parameters": [
+                {
+                  "name": "statement",
+                  "in": "query"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "endpoints": [
+        {
+          "name": "POST /sendStatement",
+          "operation": {
+            "method": "post",
+            "path": "/sendStatement"
+          },
+          "reservedParameters": [
+            {
+              "name": "_type"
+            },
+            {
+              "name": "_path"
+            },
+            {
+              "name": "_times"
+            }
+          ],
+          "fixedOperationParameters": [],
+          "parameters": [
+            {
+              "name": "statement",
+              "operationParameter": {
+                "name": "statement",
+                "in": "query"
+              }
+            }
+          ],
+          "testable": true
+        }
+      ]
+    }
+  ],
+  "apiCredentials": []
+}

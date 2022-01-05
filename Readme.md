@@ -25,7 +25,7 @@ Root
 
 ## Commands
 
-### Generate a mnemonic phrase
+### Generate a mnemonic seed phrase
 
 ```sh
 yarn generate-seed-phrase
@@ -44,6 +44,8 @@ yarn stop-airnode
 ```
 
 ### Deploy Airnode to AWS
+
+>**Be sure to download and save the resulting `receipt.json` file from the `output` folder!**
 
 ```sh
 yarn deploy-airnode
