@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "config:convert-4": "node ./scripts/convert-4.js",
     "config:convert-local": "node ./scripts/convert-local.js",
     "config:convert-aws": "node ./scripts/convert-aws.js",
     "download-airnode": "docker pull api3/airnode-client:0.3.1 && docker pull api3/airnode-admin:0.3.1 && docker pull api3/airnode-deployer:0.3.1",
