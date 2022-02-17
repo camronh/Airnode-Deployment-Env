@@ -8,6 +8,7 @@
     "config:convert-4": "node ./scripts/convert-4.js",
     "config:convert-local": "node ./scripts/convert-local.js",
     "config:convert-aws": "node ./scripts/convert-aws.js",
+    "get-airnode-data": "node ./scripts/get-airnode-data.js",
     "download-airnode": "docker pull api3/airnode-client:0.4.0 && docker pull api3/airnode-admin:0.4.0 && docker pull api3/airnode-deployer:0.4.0",
     "generate-seed-phrase": "docker run api3/airnode-admin:0.4.0 generate-mnemonic",
     "stop-airnode": "docker stop quick-deploy-container-airnode && docker rm quick-deploy-container-airnode",
@@ -17,5 +18,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@api3/airnode-admin": "^0.4.0",
+    "ethers": "^5.5.4"
+  }
 }
